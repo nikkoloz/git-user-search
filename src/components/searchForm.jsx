@@ -1,8 +1,25 @@
 import searchIcon from "../assets/search.svg";
+import getUser from "../http/getUser";
+import { useState } from "react"
 
+function SearchForm({ darkMode, setUser }) {
+    const [searchText, setSearchText] = useState('');
 
-function SearchForm({ handleSearch, darkMode, setSearchText, searchText }) {
+    function handleSearch(e) {
+        e.preventDefault()
+        if (searchText !== '') {
+            setSearchText('')
+            getUser(searchText).then((data) => {
+                setUser(data)
+                if (data.login !== undefined) {
+                    localStorage.setItem("USER", JSON.stringify(data))
+                }
+            })
 
+        } else {
+            console.log("sdsd");
+        }
+    }
     return <form onSubmit={handleSearch} className={`mb-10 flex rounded-lg p-2 items-center ${darkMode ? "bg-main-dark-light" : "bg-white"}`}>
         <img src={searchIcon} className='mr-2 sm400:mr-6 ml-6' />
         <input
