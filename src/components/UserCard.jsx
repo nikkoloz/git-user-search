@@ -15,7 +15,7 @@ function UserCard({ user, darkMode, setUser }) {
         localStorage.setItem("USER", "{}")
     }
     return <div className={`p-12 rounded-lg relative ${darkMode ? "bg-main-dark-light" : "bg-white"}`}>
-        <button onClick={deleteUser} className={`absolute right-1 top-1 rounded-full py-1 px-3 font-bold ${darkMode ? "bg-main-dark-bg " : " bg-main-gray-light  "} text-red-700`}>x</button>
+        <button onClick={deleteUser} className={`absolute right-1 top-1 rounded-full py-1 px-3 font-bold ${darkMode ? "bg-main-dark-bg " : " bg-main-gray-light  "} text-main-blue`}>x</button>
         <div className="flex">
             <img src={user.avatar_url} className="h-[70px] w-[70px] sm400:w-[117px] sm400:h-[117px] rounded-full mr-9" />
 
