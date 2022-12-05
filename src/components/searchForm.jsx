@@ -20,7 +20,7 @@ function SearchForm({ darkMode, setUser, setLoading }) {
     }
     return <>
         <form onSubmit={handleSearch} className={`mb-10 flex rounded-lg p-2 items-center ${darkMode ? "bg-main-dark-light" : "bg-white"}`}>
-            <img src={searchIcon} className='mr-2 sm400:mr-6 ml-6' />
+            <img alt="search icon" src={searchIcon} className='mr-2 sm400:mr-6 ml-6' />
             <input
                 placeholder="Search GitHub username…"
                 className={`text-xsm sm400:text-base w-full mr-2 focus:outline-none ${darkMode && "bg-main-dark-light text-white"}`}
